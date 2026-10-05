@@ -1,0 +1,77 @@
+# React Learning Notes — Lecture 04
+
+This README contains the concepts and practical features I learned while practicing React.
+
+
+
+### 1. Light Mode & Dark Mode
+
+I learned how to create a **Light Mode / Dark Mode** feature in a React application.
+
+* Light Mode gives the website a light background and dark text.
+* Dark Mode changes the background to dark and the text to light.
+* I used a button to switch between both modes.
+* The mode can be changed dynamically without refreshing the page.
+
+### 2. Props
+
+**Props** are used to pass information from one React component to another.
+
+I learned that:
+
+* Props are passed from a parent component to a child component.
+* Props can contain text, numbers, variables, or other values.
+* Props help make components reusable.
+* A child component can receive props and display them.
+
+Example:
+
+```jsx
+<Navbar title="My React App" />
+```
+
+Here, `title` is passed as a prop to the `Navbar` component.
+
+### 3. State
+
+I learned about **State** in React.
+
+State is used to store information that can change while the application is running.
+
+For example:
+
+* Dark/Light mode
+* Text inside a textarea
+* Counters
+* User input
+* Showing or hiding content
+
+I learned to use the `useState` Hook:
+
+```jsx
+const [mode, setMode] = useState("light");
+```
+
+Here:
+
+* `mode` stores the current value.
+* `setMode` is used to change the value.
+* `useState()` creates state in a React component.
+
+## 🛠️ Practical Work
+
+During today's practice, I worked on:
+
+* Adding Light Mode and Dark Mode.
+* Changing the website appearance using state.
+* Passing values using Props.
+* Using `useState()` to manage changing data.
+* Updating components dynamically.
+* Practicing reusable React components.
+
+## 💡 What I Learned
+
+Today's lecture helped me understand that React applications are **dynamic** because their UI can change when the state changes.
+
+I also learned that **Props are useful for communication between components**, while **State is useful for managing changing data inside a component**.
+
