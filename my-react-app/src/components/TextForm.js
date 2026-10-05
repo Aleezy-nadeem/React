@@ -1,26 +1,34 @@
 import React, {useState} from 'react'
 
-export default function TextForm(props) {
 
-   
+export default function TextForm(props) {
     const HanddleUpperCase = () => {
       setText(text.toUpperCase())
     // setText("You have clicked on HanddleUpperCase");
       console.log("Button clicked!");
+      props.showAlert("UpperCase Successful!", "success");
     } 
 
     const HanddleLowerCase = () =>{
     setText(text.toLowerCase())
-}
+      props.showAlert("LowerCase Successful!", "success");
+    }
 
-const HanddleClearCase = () =>{
+    const HanddleClearCase = () =>{
     setText("")
-}
+    }
 
 
     const HanddleOnChange=(event)=>{
         console.log("on Chnge");
         setText(event.target.value);
+    }
+
+    const handleCopy = () => {
+        const text = document.getElementById("MyBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        props.showAlert("copied to clipboard!", "success");
     }
 
 const [text, setText] = useState('');
@@ -36,6 +44,7 @@ const [text, setText] = useState('');
     <button type="button" className="btn btn-primary my-3"  onClick={HanddleUpperCase}>Upper Case</button>
     <button type= "button" className="btn btn-primary my-3 mx-3" onClick={HanddleLowerCase}>Lower Case</button>
     <button type= "button" className="btn btn-danger my-3 mx-2" onClick={HanddleClearCase}>All Clear</button>
+    <button type= "button" className="btn btn-warning my-3 mx-2" onClick={handleCopy }>Copy Text</button>
  </div>
 </div>
 <div className="container my-2">
