@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
@@ -41,24 +41,20 @@ export default function Navbar(props) {
 
             <li className="nav-item">
 
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/"
-              >
-                Home
-              </a>
+                to="/">Home</Link>
 
             </li>
 
 
             <li className="nav-item">
 
-              <a
+              <Link
                 className="nav-link" 
-                href="/about">
-                {props.aboutText}
-              </a>
+                to="/about">
+                  {props.aboutText}</Link>
 
             </li>
 
@@ -98,8 +94,8 @@ export default function Navbar(props) {
             />
 
             <label
-              className="form-check-label"
-              htmlFor="checkNativeSwitch" text-light
+              className={`form-check-label text-${props.mode === 'dark' ? 'light' : 'dark'}`}
+              htmlFor="checkNativeSwitch"
             >
               Enable Dark Mode
             </label>
