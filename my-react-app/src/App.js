@@ -65,7 +65,7 @@ function App() {
               <div className={`container my-3 text-${mode === 'dark' ? 'light' : 'dark'}`}>
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text to analyze below"
+                  heading="Try TextUtils - Word counter, Character counter, Copy text"
                 />
               </div>
             }
